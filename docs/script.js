@@ -2,11 +2,7 @@
 
 var objectUrl;
 
-//<script
-//src="https://code.jquery.com/jquery-3.3.1.min.js"
-//integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-//crossorigin="anonymous">
-//</script>
+/*
 
 $("#audio").on("canplaythrough", function(e){
     console.log("calculating duration");
@@ -171,31 +167,10 @@ $("#file").change(function(e){
           count = count + 1
         });
         console.log("after even")
-//        mySound.onloadedmetadata = function(){
-  //        mySound.addEventListener('loadedmetadata', function() {
-  //            alert("metadata for songs[" + i + "] loaded")
-  //            seconds = mySound.duration;
-  //            console.log("playing["+i+"] "+ seconds)
-//        })
 
-
-
-//        mySound.addEventListener('loadedmetadata', function()  {
-//
-//          seconds = mySound.duration;
-//          console.log("playing["+i+"] "+ seconds)
-
-//            tl = tl + seconds
-//        });
-
-
-
-        //seconds = duration in seconds of songs[i]
         tl = tl + seconds
 
 
-
-//        tl = tl + seconds
 
         tl = tl + "<br>"
     }
@@ -204,9 +179,6 @@ $("#file").change(function(e){
     $("#filename").text(file.name);
     $("#filetype").text(file.type);
     $("#filesize").text(file.size);
-
-//    $("#tracklist").html(tl);
-
 
 
     objectUrl = URL.createObjectURL(file);
