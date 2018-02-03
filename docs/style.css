@@ -1,14 +1,62 @@
-.center {
-    margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
-}
+
 body {
+    background-color: #fff7ef;
+      font-family: "Arial", Times, serif;
+}
+
+.title {
+  padding-top: 10px;
   margin: auto;
   width: 50%;
-  font-size: 20px;
-  padding: 10px;
-  font-family: "Arial", Times, serif;
-  background-color: #a9bfc9;
+  text-decoration: none;
+
+}
+
+.howto1{
+  font-size: 111%;
+  white-space: nowrap;
+ font-family: "Arial", Times, serif;
+}
+
+.howto2{
+    font-size: 90%;
+      text-decoration: none;
+      font-weight:normal;
+//      width: 50%;
+overflow-wrap: break-word;
+word-wrap: break-word;
+
+ white-space: normal;
+}
+
+footer{
+  font-size: 111%;
+  margin: auto;
+ font-family: "Arial", Times, serif;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+.f1{
+  font-size: 111%;
+  margin: auto;
+}
+
+a:hover {
+    text-decoration: underline;
+    color:blue;
+}
+
+
+div {
+  padding-top: 19px;
+  margin: auto;
+  width: 50%;
+  font-size: 111%;
+  white-space: nowrap;
+//  font-family: "Arial", Times, serif;
+
 }

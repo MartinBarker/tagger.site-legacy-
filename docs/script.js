@@ -5,7 +5,7 @@ var objectUrl;
 
 
 $("#audio").on("canplaythrough", function(e){
-    console.log("calculating duration");
+//    console.log("calculating duration");
     var seconds = e.currentTarget.duration;
     var duration = moment.duration(seconds, "seconds");
     var time = "";
@@ -21,7 +21,7 @@ $("#audio").on("canplaythrough", function(e){
 
 
 function add(filename, time, spaces_needed, start_total_string, end_total_string){
-      console.log("in add, time = ", time);
+//      console.log("in add, time = ", time);
       if(start_total_string == "0"){
         start_total_string = "00:00"
       }
@@ -29,11 +29,14 @@ function add(filename, time, spaces_needed, start_total_string, end_total_string
       $("#tracklist").append("<br>");
       var spaces = ""
       while(spaces_needed > 0){
-        spaces = spaces + "&nbsp;"
+        spaces = spaces + "&nbsp;&nbsp;"
         spaces_needed = spaces_needed - 1
       }
-//      $("#tracklist").append(filename + spaces + time);
-        $("#tracklist").append(filename + spaces + start_total_string + " - " + end_total_string);
+        //times on right side
+        //$("#tracklist").append(filename + spaces + start_total_string + " - " + end_total_string);
+        //times on left side
+        $("#tracklist").append(start_total_string + " - " + end_total_string + "&nbsp;&nbsp;" + filename );
+
 }
 
 function erase(){
@@ -42,7 +45,7 @@ function erase(){
 }
 
 $("#file").change(function(e){
-    console.log("function");
+//    console.log("function");
     var file = e.currentTarget.files[0];
     var songs = e.currentTarget.files;
     var length = songs.length;
@@ -59,6 +62,7 @@ $("#file").change(function(e){
     }
 //    console.log("maxlen:",maxlen)
   var count = 1;
+  var maxlen = 0;
     var tl = "<br>";
     for(i = 0; i < length; i++){
         var filename = songs[i].name;
@@ -108,11 +112,15 @@ $("#file").change(function(e){
             var time = "";
             var hours = duration.hours();
             if (hours > 0) { time = hours + ":" ; }
-            var append = ""
+            var append_s = ""
+            var append_m = ""
             if(duration.seconds() < 10){
-              append = "0"
+              append_s = "0"
             }
-            end_total_string = time + duration.minutes() + ":" + append + duration.seconds();
+            if(duration.minutes() < 10){
+              append_m = "0"
+            }
+            end_total_string = time + append_m + duration.minutes() + ":" + append_s + duration.seconds();
 
 
             //convert start_total_seconds time
@@ -120,11 +128,15 @@ $("#file").change(function(e){
             var time = "";
             var hours = duration.hours();
             if (hours > 0) { time = hours + ":" ; }
-            var append = ""
+            var append_s = ""
+            var append_m = ""
             if(duration.seconds() < 10){
-              append = "0"
+              append_s = "0"
             }
-            start_total_string = time + duration.minutes() + ":" + append + duration.seconds();
+            if(duration.minutes() < 10){
+              append_m = "0"
+            }
+            start_total_string = time + append_m + duration.minutes() + ":" + append_s + duration.seconds();
 
 
 
@@ -148,20 +160,29 @@ $("#file").change(function(e){
           var current_len = filename.length;
 
           //get maxlength of filename
-          var maxlen = 0;
+
           for(i = 0; i < length; i++){
+            //console.log("currentl;en = ", songs[i].name.length)
+//            if(maxlen < songs[i].name.length){
+//              maxlen = songs[i].name.length
+//            }
             if(maxlen < songs[i].name.length){
               maxlen = songs[i].name.length
             }
+
+
           }
+          console.log("maxlen = ", maxlen)
+          console.log("currentlen = ", current_len)
 
           var spaces_needed = 0
-          while(current_len < maxlen){
-                spaces_needed = spaces_needed + 1
-                current_len = current_len + 1
-          }
-
-
+  //        while(current_len < maxlen){
+//
+  //              spaces_needed = spaces_needed + 1
+    //            current_len = current_len + 1
+    //      }
+        spaces_needed = maxlen - current_len
+        console.log("spaceneeded = ", spaces_needed)
 
           console.log("playing["+i+"] "+ seconds + " . filename = " + filename)
 
@@ -170,7 +191,7 @@ $("#file").change(function(e){
 
           count = count + 1
         });
-        console.log("after even")
+//        console.log("after even")
 
         tl = tl + seconds
 
