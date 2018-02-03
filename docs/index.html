@@ -14,11 +14,11 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
-<p>Select a .mp3 file</p>
-<input type="file" id="file" multiple="multiple"/>
+<p>Select multiple audio files</p>
+<input type="file" id="file" multiple="multiple" onclick="javascript:erase();" />
 
 <audio id="audio"></audio>
-
+<!--
 <p>
   <label>File Name:</label>
   <span id="filename"></span>
@@ -38,7 +38,7 @@
   <label>Song Duration:</label>
   <span id="duration"></span>
 </p>
-
+-->
 <p>
   <label>Tracklist:</label>
   <span id="tracklist"></span>

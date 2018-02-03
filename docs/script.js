@@ -36,6 +36,10 @@ function add(filename, time, spaces_needed, start_total_string, end_total_string
         $("#tracklist").append(filename + spaces + start_total_string + " - " + end_total_string);
 }
 
+function erase(){
+//  alert("cc")
+      $("#tracklist").html("");
+}
 
 $("#file").change(function(e){
     console.log("function");
