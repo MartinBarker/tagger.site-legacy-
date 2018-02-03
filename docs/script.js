@@ -2,7 +2,7 @@
 
 var objectUrl;
 
-/*
+
 
 $("#audio").on("canplaythrough", function(e){
     console.log("calculating duration");
