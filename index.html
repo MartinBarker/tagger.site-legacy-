@@ -1,0 +1,250 @@
+
+<script language="JavaScript" type="text/javascript" src="jquery-3.3.1.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+
+<script type="text/javascript" src="script.js" defer></script>
+<script type="text/javascript" src="moment.min.js" defer></script>
+
+<style type = text/css>
+
+    #site-description{
+        font-size: 90px;
+        font-weight: bold;
+    }
+
+    #sidebar{
+        margin-top: -50%;
+        margin-bottom: -33px;
+        font-size: 15px;
+    }
+
+    #all{
+        font-size: 18px;
+    }
+    
+    #content{
+        margin-top: 90px;
+    }
+
+    #post-content{
+        margin-top: -4%;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    #main-nav-list{
+        float:left;         
+    }
+
+    #header{
+        margin-top: 8px;
+    }
+
+    #main-nav{
+        margin-left:22px;
+        
+    }
+    
+    #headerwrap{
+        margin-top: -12px;
+        overflow:hidden;
+    }
+    
+    #site-logo{ 
+        font-weight: bold;
+    }  
+    #headerLinks{
+        color: #1f7bb6;   
+    }
+
+    #mainThing{
+        font-weight: bold;
+        color:black;  
+           
+    }
+
+    #headerButtons{
+        margin-top: 12px;
+        
+        float:center;
+    }
+    </style>
+    
+    
+    
+    <!DOCTYPE html>
+    
+    <nav class="navbar navbar-default navbar-fixed-top accented">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a id='mainThing' class="navbar-brand" ><span class="martin">tagger.site</span> <span class="barker"></span></a>
+            
+          </div>
+          <div id = 'headerButtons'>
+
+                <ul id="headerLinks" class="nav navbar-nav navbar-center">
+                        <a href="https://github.com/MartinBarker/tagger.site"><button class="btn btn-sm btn-default" type="button">Github <i class="fa fa-github"></i></button></a>
+                        <a href="mailto:martinbarker99@gmail.com"><button class="btn btn-sm btn-default"  type="button">Email <i class="fa fa-envelope-o"></i></button></a>
+                        <a href="https://www.linkedin.com/in/martinbarker99"><button class="btn btn-sm btn-default"  type="button">LinkedIn<i class="fa fa-linkedin-square"></i></button></a>
+                        <a href="https://www.youtube.com/c/martinradio2"><button class="btn btn-sm btn-default"  type="button">YouTube<i class="fa fa-youtube"></i></button></a>
+                        <a href="http://www.martinradio.com"><button class="btn btn-sm btn-default"  type="button">martinradio<i class="fa fa-broadcast-tower" href="https://static.thenounproject.com/png/96926-200.png"></i></button></a>
+                      </ul>
+               
+          </div>
+          <div class="collapse navbar-collapse" id="headerLinks">
+            <ul id="headerLinks" class="nav navbar-nav navbar-right">
+              <li id='headerLinks'><a id="headerLinks" href="https://martinbarker.github.io/">About Me</a></li>
+              <li id='headerLinks'><a id="headerLinks" href="https://martinbarker.github.io/projects.html">Projects</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <html id='all' dir="ltr" lang="hu-HU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Want to play your Youtube playlists in random order? Or mix several playlists together? Come on in. No registration required.">
+    
+    <title>tagger.site</title>
+    <!--	
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    -->
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <!-- header -->
+    <link rel="stylesheet" id="themify-styles-css" href="tagger_style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="themify-media-queries-css" href="./Shuffle or mix your Youtube playlists_files/media-queries.css" type="text/css" media="all">
+    <meta name="viewport" content="width=100%, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+    
+    </head>
+    <link rel="icon" href="http://iconshow.me/media/images/ui/iOS7-optimized-icon/png/512/05.tag.png">
+    <body class="home blog" onload="load()">
+    
+    <div id="pagewrap">
+    <!--
+        <div id="headerwrap">
+    
+            <header id="header" class="pagewidth">
+                <hgroup >
+                    <h1 id="site-logo"><a href="https://github.com/MartinBarker/tagger.site">tagger.site</a></h1>	
+                    <h2 id="site-description">Generate a timestamped tracklist for audio files</h2>
+                </hgroup>
+        
+                <div id='headerOptions'>
+                    <ul id="main-nav" class="main-nav clearfix">
+                        <li id="main-nav-list">
+                            <a id="main-nav-list" href="/home.html">Home</a>
+                            <a id="main-nav-list" href="/projects.html">Projects</a>
+                            <a id="main-nav-list" href="/home.html">About Me</a>
+                        </li>
+                                                                                    
+                    </ul>
+                </div>
+        
+            </header>
+           
+        -->              
+        </div>
+      
+        
+        
+        
+    <div id="body" class="clearfix"> 
+        
+    <!-- layout -->
+    <div id="layout" class="pagewidth clearfix sidebar1">
+        <!-- content -->
+        <div id="content">			
+
+    
+           
+                        <div id="post-content">
+                            <h4 class="widgettitle"><strong>How to use:</strong></h4>
+                            
+                            <li>Select multiple audio files, then this website will read the file's header 'length' metadata and calculate an ongoing sum for each track. </li>
+                            
+                            <br>
+
+                            <input type="file" id="file" multiple="multiple" onclick="javascript:erase();" />
+                            <audio id="audio"></audio>
+                            <p>
+                            <label>Tracklist generated by http://tagger.site:</label>
+                            <span id="tracklist"></span>
+                            </p>
+
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/uWRHThuhHP4?controls=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+                        </div>
+    
+                        </ul>
+                    
+
+                        <!-- /.post-content -->
+						
+                            
+                </div>
+                <!-- /loops-wrapper -->
+    
+        </div>
+        <!-- /#content -->
+    
+            
+        <aside id="sidebar">
+	
+            <div class="widget themify-most-commented">
+                <h4 class="widgettitle">Suggestion?</h4>
+                <ul class="feature-posts-list">
+                    <li><a href="mailto:martinbarker99@gmail.com" target="_blank">Click here to send me an email.</a></li>
+                </ul>
+            </div>	
+            <div class="widget themify-most-commented">
+                <h4 class="widgettitle">Contribute</h4>
+                <ul class="feature-posts-list">
+                    <li>View and contribute to this project on <a href="https://github.com/MartinBarker/tagger.site" target="_blank">Github</a></li>
+                </ul>
+            </div>		
+            
+    
+        </aside>
+        <!-- /#sidebar -->
+    </div>
+    <!-- /#layout -->
+    
+        </div>
+        <!-- /body -->
+            
+        <div id="footerwrap">
+            <footer id="footer" class="pagewidth clearfix">
+                <div class="footer-widgets clearfix">
+                    <div class="col3-1 first"></div>
+                    <div class="col3-1 "></div>
+                    <div class="col3-1 "></div>			  				
+                </div>
+    
+                <div class="footer-text clearfix">
+                    <p>Copyright © 2019 Martin Barker</a></p>
+ 
+                </div>
+                <!-- /footer-text --> 
+        
+            </footer>
+            <!-- /#footer --> 
+        </div>
+        <!-- /#footerwrap -->
+        
+    </div>
+    <!-- /#pagewrap -->
+    
+    
+    <!-- footer -->
+    
+    
